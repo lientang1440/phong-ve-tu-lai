@@ -1,0 +1,6 @@
+{
+  "name": "Phòng vé Tư Lai",
+  "description": "Đặt vé tàu cao tốc đi Phú Quốc, Côn Đảo, Nam Du, Thổ Chu trực tuyến nhanh chóng, uy tín từ Phòng vé Tư Lai.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
