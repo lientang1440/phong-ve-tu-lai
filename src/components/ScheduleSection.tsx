@@ -188,7 +188,7 @@ export default function ScheduleSection({ onBookNowQuick, departures }: Schedule
                             className="px-3.5 py-1.5 bg-brand-coral hover:bg-red-700 text-white text-xs font-bold rounded-full transition-colors cursor-pointer shadow-sm inline-flex items-center space-x-1"
                           >
                             <MessageCircle className="w-3.5 h-3.5" />
-                            <span>Đặt Qua Zalo</span>
+                            <span>Liên hệ đặt vé</span>
                           </a>
                         </td>
                       </tr>
@@ -243,7 +243,7 @@ export default function ScheduleSection({ onBookNowQuick, departures }: Schedule
                           className="px-3.5 py-1.5 bg-brand-coral hover:bg-red-700 text-white text-xs font-bold rounded-full cursor-pointer inline-flex items-center space-x-1"
                         >
                           <MessageCircle className="w-3.5 h-3.5" />
-                          <span>Đặt qua Zalo</span>
+                          <span>Liên hệ đặt vé</span>
                         </a>
                       </div>
                     </div>

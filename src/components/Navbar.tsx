@@ -116,7 +116,7 @@ export default function Navbar({ onBookNowClick }: NavbarProps) {
               id="cta-book-header"
             >
               <MessageCircle className="w-4 h-4 text-white" />
-              <span>Đặt vé qua Zalo</span>
+              <span>Liên hệ đặt vé</span>
             </a>
           </div>
 
@@ -212,7 +212,7 @@ export default function Navbar({ onBookNowClick }: NavbarProps) {
                   className="w-full py-3.5 bg-brand-coral active:bg-red-700 text-white font-sans font-bold text-center rounded-xl text-sm transition-all shadow-md flex items-center justify-center space-x-1.5"
                 >
                   <MessageCircle className="w-5 h-5 text-white" />
-                  <span>Đặt vé qua Zalo</span>
+                  <span>Liên hệ đặt vé</span>
                 </a>
               </div>
             </motion.div>

@@ -376,7 +376,14 @@ export default function BookingForm({ initialFrom, initialTo, departures, onSucc
                           <span className="font-mono font-bold text-lg text-slate-800">{ship.time}</span>
                           <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-semibold">{ship.ferryLine}</span>
                         </div>
-                        <p className="text-xs text-slate-500 mt-1">Giá vé: <strong className="text-brand-blue">{ship.price.toLocaleString('vi-VN')}đ</strong></p>
+                        <p className="text-xs text-slate-500 mt-1">
+  Giá vé:{' '}
+  <strong className="text-brand-blue">
+    {ship.price != null
+      ? `${ship.price.toLocaleString('vi-VN')} VNĐ`
+      : ship.priceLabel}
+  </strong>
+</p>
                       </div>
                     </div>
 
@@ -440,7 +447,14 @@ export default function BookingForm({ initialFrom, initialTo, departures, onSucc
                           <span className="font-mono font-bold text-lg text-slate-800">{ship.time}</span>
                           <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-semibold">{ship.ferryLine}</span>
                         </div>
-                        <p className="text-xs text-slate-500 mt-1">Giá vé: <strong className="text-brand-blue">{ship.price.toLocaleString('vi-VN')}đ</strong></p>
+                       <p className="text-xs text-slate-500 mt-1">
+  Giá vé:{' '}
+  <strong className="text-brand-blue">
+    {ship.price != null
+      ? `${ship.price.toLocaleString('vi-VN')} VNĐ`
+      : ship.priceLabel}
+  </strong>
+</p>
                       </div>
                     </div>
 

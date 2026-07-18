@@ -138,7 +138,7 @@ export default function App() {
                   className="px-6 py-3.5 bg-brand-coral hover:bg-red-700 text-white font-sans font-bold rounded-2xl shadow-md hover:shadow-lg transition-all text-xs sm:text-sm flex items-center space-x-1.5 cursor-pointer"
                 >
                   <MessageCircle className="w-4.5 h-4.5 text-white" />
-                  <span>Liên hệ đặt vé qua Zalo</span>
+                  <span>Liên hệ đặt vé</span>
                 </a>
                 <a
                   href="#routes"
@@ -195,7 +195,7 @@ export default function App() {
                     rel="noopener noreferrer"
                     className="text-[11px] font-extrabold text-brand-coral hover:text-red-700 flex items-center space-x-0.5 group/btn cursor-pointer animate-pulse"
                   >
-                    <span>Đặt vé nhanh qua Zalo</span>
+                    <span>Đặt vé nhanh</span>
                     <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5" />
                   </a>
                 </div>
@@ -237,7 +237,7 @@ export default function App() {
                     rel="noopener noreferrer"
                     className="text-[11px] font-extrabold text-brand-blue hover:text-blue-900 flex items-center space-x-0.5 group/btn2 cursor-pointer"
                   >
-                    <span>Lên lịch & Đặt qua Zalo</span>
+                    <span>Lên lịch & Đặt vé</span>
                     <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover/btn2:translate-x-0.5" />
                   </a>
                 </div>
@@ -330,7 +330,7 @@ export default function App() {
             <div className="space-y-1">
               <h5 className="font-heading font-extrabold text-xs sm:text-sm text-white uppercase tracking-wider">Đã tiếp nhận yêu cầu!</h5>
               <p className="font-sans text-[11px] text-slate-300 leading-relaxed font-semibold">
-                Nhân viên Phòng vé sảnh Rạch Giá sẽ nhanh chóng nhắn tin Zalo giữ chỗ vé của bạn ngay tức thì.
+                Nhân viên Phòng vé sảnh Rạch Giá sẽ nhanh chóng nhắn tin giữ chỗ vé của bạn ngay tức thì.
               </p>
             </div>
           </motion.div>

@@ -84,7 +84,7 @@ export default function PopularRoutes({ onSelectRoute, routes }: PopularRoutesPr
                       className="w-full py-2.5 bg-brand-blue hover:bg-slate-800 text-white font-sans text-xs font-bold rounded-xl transition-colors inline-flex items-center justify-center space-x-1.5 cursor-pointer shadow-sm active:scale-95"
                     >
                       <MessageCircle className="w-3.5 h-3.5" />
-                      <span>Đặt Vé Qua Zalo</span>
+                      <span>Liên hệ đặt vé</span>
                     </a>
                   </div>
                 </div>
