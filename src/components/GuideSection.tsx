@@ -29,7 +29,7 @@ export default function GuideSection({ blogPosts }: GuideSectionProps) {
             <span>Tin Tức & Cẩm Nang</span>
           </div>
           <h2 className="font-heading font-black text-3xl sm:text-4xl text-brand-blue tracking-tight leading-none">
-            Cập Nhật Mới Nhất Từ Tư Lai
+            Cập Nhật Thường Xuyên
           </h2>
           <div className="h-1 bg-brand-coral w-16 mx-auto mt-4 mb-3 rounded-full"></div>
           <p className="font-sans text-sm sm:text-base text-slate-500 max-w-xl mx-auto leading-relaxed">

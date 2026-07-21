@@ -92,7 +92,7 @@ export default function App() {
             <div className="lg:col-span-6 space-y-6 sm:space-y-8 text-left" id="hero-marketing-col">
               <div className="inline-flex items-center space-x-2 bg-brand-coral/10 text-brand-coral px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>Phòng Vé Tư Lai — Uy Tín Hàng Đầu</span>
+                <span>Phòng Vé Tư Lai — Đối Tác Tin Cậy</span>
               </div>
               
               <div className="space-y-4">
@@ -102,7 +102,7 @@ export default function App() {
                 </h1>
                 
                 <p className="font-sans text-sm sm:text-base text-slate-500 max-w-lg leading-relaxed font-medium">
-                  Khám phá Phú Quốc, Côn Đảo, Nam Du, Thổ Chu cùng đội tàu cao tốc hai thân hiện đại bậc nhất Việt Nam — an toàn, đúng giờ và tràn ngập niềm tin khởi hành.
+                  Khám phá Phú Quốc, Nam Du, Lại Sơn, Thổ Châu, Côn Đảo, Phú Quý cùng đội tàu cao tốc hai thân hiện đại bậc nhất Việt Nam — an toàn, đúng giờ và tràn ngập niềm tin khởi hành.
                 </p>
               </div>
 
@@ -221,7 +221,7 @@ export default function App() {
 
                   <div className="absolute bottom-3 left-3 right-3 text-white">
                     <h5 className="font-heading font-extrabold text-xs sm:text-sm tracking-tight leading-tight">Lựa chọn tối ưu, lịch trình dày đặc</h5>
-                    <p className="text-[10px] text-slate-200 mt-0.5 font-medium leading-relaxed">Danh tiếng chuẩn mực, vận hành tuyệt đối an toàn & tiết kiệm chi phí.</p>
+                    <p className="text-[10px] text-slate-200 mt-0.5 font-medium leading-relaxed">Danh tiếng chuẩn mực, vận hành tuyệt đối an toàn.</p>
                   </div>
                 </div>
 

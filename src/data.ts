@@ -26,7 +26,7 @@ export const POPULAR_ROUTES: Route[] = [
     id: 'rg-pq',
     from: 'Rạch Giá',
     to: 'Phú Quốc',
-    price: 350000,
+    price: 315000,
     badge: 'Phổ biến',
     image: 'https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=800',
     description: 'Hành trình tuyệt vời vượt vịnh Thái Lan đến Đảo Ngọc xanh mát.'
@@ -35,7 +35,7 @@ export const POPULAR_ROUTES: Route[] = [
     id: 'st-cd',
     from: 'Sóc Trăng',
     to: 'Côn Đảo',
-    price: 310000,
+    price: 363273,
     badge: 'Mới',
     image: 'https://static-images.vnncdn.net/files/publish/2022/8/27/con-dao-396.jpg',
     description: 'Rút ngắn thời gian ra Côn Đảo thiêng liêng từ cảng Trần Đề.'
@@ -44,7 +44,7 @@ export const POPULAR_ROUTES: Route[] = [
     id: 'rg-nd',
     from: 'Rạch Giá',
     to: 'Nam Du',
-    price: 230000,
+    price: 245455,
     image: 'https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg?auto=compress&cs=tinysrgb&w=800',
     description: 'Khám phá quần đảo hoang sơ tuyệt mỹ với những hòn đảo nhỏ kỳ vĩ.'
   },
@@ -52,7 +52,7 @@ export const POPULAR_ROUTES: Route[] = [
     id: 'pq-tc',
     from: 'Phú Quốc',
     to: 'Thổ Chu',
-    price: 420000,
+    price: 324000,
     image: 'https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=compress&cs=tinysrgb&w=800',
     description: 'Chuyến phiêu lưu đến hòn đảo tiền tiêu cực Nam đầy hoang sơ.'
   }
@@ -63,25 +63,25 @@ export const OPERATOR_PARTNERS: Partner[] = [
     name: 'Phú Quốc Express',
     logoType: 'Phú Quốc Express',
     highlights: 'Tàu hai thân hiện đại, trải nghiệm cao cấp.',
-    details: 'Đội tàu hai thân đổi mới với khoang VIP sang trọng, ghế ngồi bọc da cao cấp rộng rãi, dịch vụ chuyên nghiệp chuẩn 5 sao. Chuyên phục vụ các tuyến Phú Quốc – Hà Tiên – Rạch Giá – Nam Du.',
+    details: 'Đội tàu hai thân đổi mới với khoang VIP sang trọng, ghế ngồi bọc da cao cấp rộng rãi, dịch vụ chuyên nghiệp chuẩn 5 sao. Chuyên phục vụ các tuyến Phú Quốc – Hà Tiên – Rạch Giá – Côn Đảo – Phú Quý – Lý Sơn.',
     advantages: [
-      'Tàu hai thân chống say sóng tối đa',
+      'Tàu hai thân hiện đại',
       'Khoang VIP riêng biệt rộng rãi và yên tĩnh',
-      'Đại lý ủy quyền chính thức phát vé trực tuyến',
-      'Trang thiết bị an toàn đạt chuẩn quốc tế'
+      'Đại lý ủy quyền chính thức, đặt vé trực tuyến',
+      'Trang thiết bị an toàn'
     ],
     imageUrl: 'https://images.pexels.com/photos/30738862/pexels-photo-30738862.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
     name: 'Superdong',
     logoType: 'Superdong',
-    highlights: 'Hãng tàu cao tốc hàng đầu vùng biển Tây Nam.',
-    details: 'Hơn 25 năm kinh nghiệm phục vụ hành khách. Sở hữu đội tàu cao tốc một thân hiện đại, hoạt động cực kỳ bền bỉ và đúng giờ trên các tuyến Rạch Giá – Phú Quốc, Nam Du, Thổ Chu, Côn Đảo.',
+    highlights: 'Hãng tàu cao tốc có lịch sử chạy lâu năm tại vùng biển Tây Nam.',
+    details: 'Hơn 20 năm kinh nghiệm phục vụ hành khách. Sở hữu đội tàu cao tốc một thân hiện đại, hoạt động bền bỉ và đúng giờ trên các tuyến Rạch Giá – Phú Quốc, Nam Du, Thổ Chu, Côn Đảo.',
     advantages: [
-      'Lịch chạy dày đặc nhất trong ngày',
-      'Giá vé thông dụng tiết kiệm hàng đầu',
+      'Lịch trình đa dạng, linh hoạt',
+      'Chất lượng phục vụ chuyên nghiệp',
       'Vận chuyển xe máy và hành lý khối lượng lớn',
-      'Kinh nghiệm 25 năm vận hành an toàn vượt trội'
+      'Kinh nghiệm 20 năm vận hành an toàn vượt trội'
     ],
     imageUrl: 'https://images.pexels.com/photos/37729788/pexels-photo-37729788.jpeg?auto=compress&cs=tinysrgb&w=800'
   }

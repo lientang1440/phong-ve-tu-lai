@@ -133,7 +133,7 @@ export default function Footer() {
                     0364 674 854
                   </a>
                   <a href="tel:02670795274" className="font-mono text-sm font-semibold text-slate-300 hover:text-brand-coral block">
-                    02670.795.274 (Bàn cố định)
+                    0944 485 510
                   </a>
                 </div>
               </li>
@@ -144,7 +144,7 @@ export default function Footer() {
                 <div>
                   <p className="text-white text-xs font-semibold leading-none">Email Phòng Vé:</p>
                   <a href="mailto:hello@oceanline.vn" className="hover:text-white transition-colors block mt-0.5">
-                    hello@oceanline.vn
+                    nguyenthuong04041994@gmail.com
                   </a>
                 </div>
               </li>
@@ -153,8 +153,8 @@ export default function Footer() {
               <li className="flex items-start space-x-2.5">
                 <MapPin className="w-4.5 h-4.5 text-brand-coral shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-white text-xs font-semibold leading-none">Văn Phòng Tư Lai:</p>
-                  <span className="block mt-0.5">Bến tàu cao tốc Rạch Giá, Đường Nguyễn Công Trứ, Kiên Giang Việt Nam.</span>
+                  <p className="text-white text-xs font-semibold leading-none">Văn Phòng</p>
+                  <span className="block mt-0.5">Tổ 3, khu phố Bãi Vòng Hàm Ninh, đặc khu Phú Quốc, tỉnh An Giang, Việt Nam</span>
                 </div>
               </li>
 

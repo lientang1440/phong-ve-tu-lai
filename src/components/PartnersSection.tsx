@@ -55,7 +55,7 @@ export default function PartnersSection({ partners }: PartnersSectionProps) {
                       <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider leading-none shadow-sm block w-fit mb-2 ${
                         isPhuQuocEx ? 'bg-brand-coral' : 'bg-brand-teal'
                       }`}>
-                        {isPhuQuocEx ? 'Chuẩn 5 Sao' : 'Lịch Sử 25 Năm'}
+                        {isPhuQuocEx ? 'TÀU HAI THÂN HIỆN ĐẠI' : 'LỊCH SỬ HÌNH THÀNH VÀ PHÁT TRIỂN LÂU DÀI'}
                       </span>
                       <h3 className="font-heading font-black text-xl sm:text-2xl drop-shadow">
                         {partner.name}

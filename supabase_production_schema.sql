@@ -75,10 +75,10 @@ create index if not exists idx_faq_category on public.faqs(category);
 -- Seed data using explicit UUIDs for stable reference
 insert into public.routes (id, slug, from_port, to_port, price, badge, image_url, description, is_active)
 values
-  ('6e453953-8d5f-489b-b596-8a0c8f1a1e1f', 'rach-gia-phu-quoc', 'Rạch Giá', 'Phú Quốc', 350000, 'Phổ biến', 'https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=800', 'Hành trình tuyệt vời vượt vịnh Thái Lan đến Đảo Ngọc xanh mát.', true),
+  ('6e453953-8d5f-489b-b596-8a0c8f1a1e1f', 'rach-gia-phu-quoc', 'Rạch Giá', 'Phú Quốc', 315000, 'Phổ biến', 'https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=800', 'Hành trình tuyệt vời vượt vịnh Thái Lan đến Đảo Ngọc xanh mát.', true),
   ('1b6e80f5-6a95-4fd4-8b69-fbbfca4e8ad3', 'soc-trang-con-dao', 'Sóc Trăng', 'Côn Đảo', 310000, 'Mới', 'https://static-images.vnncdn.net/files/publish/2022/8/27/con-dao-396.jpg', 'Rút ngắn thời gian ra Côn Đảo thiêng liêng từ cảng Trần Đề.', true),
-  ('f7db9a4f-17de-4ddb-bbf7-1d8f88faa4eb', 'rach-gia-nam-du', 'Rạch Giá', 'Nam Du', 230000, null, 'https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg?auto=compress&cs=tinysrgb&w=800', 'Khám phá quần đảo hoang sơ tuyệt mỹ với những hòn đảo nhỏ kỳ vĩ.', true),
-  ('c7bf8d34-2b39-4f27-9d18-8881aaa92b43', 'phu-quoc-tho-chu', 'Phú Quốc', 'Thổ Chu', 420000, null, 'https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=compress&cs=tinysrgb&w=800', 'Chuyến phiêu lưu đến hòn đảo tiền tiêu cực Nam đầy hoang sơ.', true)
+  ('f7db9a4f-17de-4ddb-bbf7-1d8f88faa4eb', 'rach-gia-nam-du', 'Rạch Giá', 'Nam Du', 245455, null, 'https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg?auto=compress&cs=tinysrgb&w=800', 'Khám phá quần đảo hoang sơ tuyệt mỹ với những hòn đảo nhỏ kỳ vĩ.', true),
+  ('c7bf8d34-2b39-4f27-9d18-8881aaa92b43', 'phu-quoc-tho-chu', 'Phú Quốc', 'Thổ Chu', 324000, null, 'https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=compress&cs=tinysrgb&w=800', 'Chuyến phiêu lưu đến hòn đảo tiền tiêu cực Nam đầy hoang sơ.', true)
 on conflict (id) do nothing;
 
 insert into public.departures (id, route_id, ferry_operator, departure_time, price_label)
@@ -99,8 +99,8 @@ on conflict (id) do nothing;
 
 insert into public.partners (id, name, logo_type, highlights, details, advantages, image_url)
 values
-  ('2f9f4e7f-f4a5-4c26-a6e8-7b969688b22d', 'Phú Quốc Express', 'Phú Quốc Express', 'Tàu hai thân hiện đại, trải nghiệm cao cấp.', 'Đội tàu hai thân đổi mới với khoang VIP sang trọng, ghế ngồi bọc da cao cấp rộng rãi, dịch vụ chuyên nghiệp chuẩn 5 sao. Chuyên phục vụ các tuyến Phú Quốc – Hà Tiên – Rạch Giá – Nam Du.', '["Tàu hai thân chống say sóng tối đa", "Khoang VIP riêng biệt rộng rãi và yên tĩnh", "Đại lý ủy quyền chính thức phát vé trực tuyến", "Trang thiết bị an toàn đạt chuẩn quốc tế"]', 'https://images.pexels.com/photos/30738862/pexels-photo-30738862.jpeg?auto=compress&cs=tinysrgb&w=800'),
-  ('34a4d7f5-57ac-442e-943f-7f6d4f5566bf', 'Superdong', 'Superdong', 'Hãng tàu cao tốc hàng đầu vùng biển Tây Nam.', 'Hơn 25 năm kinh nghiệm phục vụ hành khách. Sở hữu đội tàu cao tốc một thân hiện đại, hoạt động cực kỳ bền bỉ và đúng giờ trên các tuyến Rạch Giá – Phú Quốc, Nam Du, Thổ Chu, Côn Đảo.', '["Lịch chạy dày đặc nhất trong ngày", "Giá vé thông dụng tiết kiệm hàng đầu", "Vận chuyển xe máy và hành lý khối lượng lớn", "Kinh nghiệm 25 năm vận hành an toàn vượt trội"]', 'https://images.pexels.com/photos/37729788/pexels-photo-37729788.jpeg?auto=compress&cs=tinysrgb&w=800')
+  ('2f9f4e7f-f4a5-4c26-a6e8-7b969688b22d', 'Phú Quốc Express', 'Phú Quốc Express', 'Tàu hai thân hiện đại, trải nghiệm cao cấp.', 'Đội tàu hai thân đổi mới với khoang VIP sang trọng, ghế ngồi bọc da cao cấp rộng rãi, dịch vụ chuyên nghiệp chuẩn 5 sao. Chuyên phục vụ các tuyến Phú Quốc – Hà Tiên – Rạch Giá – Côn Đảo – Phú Quý – Lý Sơn', '["Tàu hai thân hiện đại", "Khoang VIP riêng biệt rộng rãi và yên tĩnh", "Đại lý ủy quyền chính thức, đặt vé trực tuyến", "Trang thiết bị an toàn"]', 'https://images.pexels.com/photos/30738862/pexels-photo-30738862.jpeg?auto=compress&cs=tinysrgb&w=800'),
+  ('34a4d7f5-57ac-442e-943f-7f6d4f5566bf', 'Superdong', 'Superdong', 'Hãng tàu cao tốc có lịch sử chạy lâu năm tại vùng biển Tây Nam', 'Hơn 20 năm kinh nghiệm phục vụ hành khách. Sở hữu đội tàu cao tốc một thân hiện đại, hoạt động  bền bỉ và đúng giờ trên các tuyến Rạch Giá – Phú Quốc, Nam Du, Thổ Chu, Côn Đảo.', '["Lịch trình đa dạng, linh hoạt", "Chất lượng phục vụ chuyên nghiệp", "Vận chuyển xe máy và hành lý khối lượng lớn", "Kinh nghiệm 20 năm vận hành an toàn vượt trội"]', 'https://images.pexels.com/photos/37729788/pexels-photo-37729788.jpeg?auto=compress&cs=tinysrgb&w=800')
 on conflict (id) do nothing;
 
 insert into public.blog_posts (id, slug, title, category, snippet, image_url, publish_date, read_time, content)
