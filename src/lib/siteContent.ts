@@ -28,11 +28,11 @@ function parsePriceFromLabel(label: string): number {
 function normalizePartners(raw: any[]): Partner[] {
   return raw.map((partner) => ({
     name: partner.name,
-    logoType: partner.logo_type ?? partner.logoType ?? partner.logo_type,
+    logoType: partner.logo_type ?? partner.logoType ?? '',
     highlights: partner.highlights,
     details: partner.details,
     advantages: Array.isArray(partner.advantages) ? partner.advantages : [],
-    imageUrl: partner.image_url ?? partner.imageUrl,
+    imageUrl: partner.image_url ?? partner.imageUrl ?? '',
   }));
 }
 
@@ -42,7 +42,7 @@ function normalizeBlogPosts(raw: any[]): BlogPost[] {
     title: post.title,
     category: post.category,
     snippet: post.snippet,
-    imageUrl: post.image_url ?? post.imageUrl,
+    imageUrl: post.image_url ?? post.imageUrl ?? '',
     date: post.publish_date ?? post.date,
     readTime: post.read_time ?? post.readTime,
     content: post.content,
@@ -70,42 +70,33 @@ function normalizeRoutes(raw: any[]): Route[] {
 }
 
 function normalizeDepartures(raw: any[]): Departure[] {
-  return raw.map((departure: any) => ({
-    id: departure.id,
-    ferryLine:
-      departure.ferry_operator ??
-      departure.ferryLine ??
-      departure.ferry_line ??
-      '',
+  return raw.map((departure: any) => {
+    const priceLabel = departure.price_label ?? departure.priceLabel ?? '';
 
-    routeFrom:
-      departure.route_from ??
-      departure.routeFrom ??
-      '',
-
-    routeTo:
-      departure.route_to ??
-      departure.routeTo ??
-      '',
-
-    time:
-      departure.departure_time ??
-      departure.time ??
-      '',
-
-    priceLabel:
-      departure.price_label ??
-      departure.priceLabel ??
-      '',
-
-    price: parsePriceFromLabel(
-      departure.price_label ??
-      departure.priceLabel ??
-      ''
-    ),
-
-    status: 'Còn chỗ',
-  }));
+    return {
+      id: departure.id,
+      ferryLine:
+        departure.ferry_operator ??
+        departure.ferryLine ??
+        departure.ferry_line ??
+        '',
+      routeFrom:
+        departure.route_from ??
+        departure.routeFrom ??
+        '',
+      routeTo:
+        departure.route_to ??
+        departure.routeTo ??
+        '',
+      time:
+        departure.departure_time ??
+        departure.time ??
+        '',
+      priceLabel,
+      price: parsePriceFromLabel(priceLabel),
+      status: 'Còn chỗ',
+    };
+  });
 }
 
 export async function fetchSiteContent(): Promise<SiteContent> {
@@ -115,81 +106,48 @@ export async function fetchSiteContent(): Promise<SiteContent> {
   }
 
   try {
-    const [
-      routesRes,
-      departuresRes,
-      partnersRes,
-      blogPostsRes,
-      faqsRes,
-    ] = await Promise.all([
-      supabase
-        .from('routes')
-        .select('*')
-        .eq('is_active', true),
+    const [routesRes, departuresRes, partnersRes, blogPostsRes, faqsRes] =
+      await Promise.all([
+        supabase.from('routes').select('*').eq('is_active', true),
 
-      supabase
-        .from('departures')
-        .select('*')
-        .eq('is_active', true),
+        supabase
+          .from('departures')
+          .select(`
+            id,
+            ferry_operator,
+            route_from,
+            route_to,
+            departure_time,
+            price_label,
+            is_active
+          `)
+          .eq('is_active', true),
 
-      supabase
-        .from('partners')
-        .select('*')
-        .eq('is_active', true),
+        supabase.from('partners').select('*').eq('is_active', true),
+        supabase.from('blog_posts').select('*').eq('is_active', true),
+        supabase.from('faqs').select('*').eq('is_active', true),
+      ]);
 
-      supabase
-        .from('blog_posts')
-        .select('*')
-        .eq('is_active', true),
-
-      supabase
-        .from('faqs')
-        .select('*')
-        .eq('is_active', true),
-    ]);
-
-    if (routesRes.error) {
-      console.error('Lỗi bảng routes:', routesRes.error);
-    }
-
-    if (departuresRes.error) {
-      console.error('Lỗi bảng departures:', departuresRes.error);
-    }
-
-    if (partnersRes.error) {
-      console.error('Lỗi bảng partners:', partnersRes.error);
-    }
-
-    if (blogPostsRes.error) {
-      console.error('Lỗi bảng blog_posts:', blogPostsRes.error);
-    }
-
-    if (faqsRes.error) {
-      console.error('Lỗi bảng faqs:', faqsRes.error);
-    }
+    if (routesRes.error) console.error('Lỗi bảng routes:', routesRes.error);
+    if (departuresRes.error) console.error('Lỗi bảng departures:', departuresRes.error);
+    if (partnersRes.error) console.error('Lỗi bảng partners:', partnersRes.error);
+    if (blogPostsRes.error) console.error('Lỗi bảng blog_posts:', blogPostsRes.error);
+    if (faqsRes.error) console.error('Lỗi bảng faqs:', faqsRes.error);
 
     const routes =
-      routesRes.error ||
-      !Array.isArray(routesRes.data) ||
-      routesRes.data.length === 0
+      routesRes.error || !Array.isArray(routesRes.data) || routesRes.data.length === 0
         ? fallbackContent.routes
         : normalizeRoutes(routesRes.data);
 
-    const routeMap = new Map(
-      (routesRes.data ?? []).map((route: any) => [route.id, route])
-    );
-
-const departures =
-  departuresRes.error ||
-  !Array.isArray(departuresRes.data) ||
-  departuresRes.data.length === 0
-    ? fallbackContent.departures
-    : normalizeDepartures(departuresRes.data);
+    const departures =
+      departuresRes.error ||
+      !Array.isArray(departuresRes.data) ||
+      departuresRes.data.length === 0
+        ? fallbackContent.departures
+        : normalizeDepartures(departuresRes.data);
 
     const partners =
-      partnersRes.error ||
-      !Array.isArray(partnersRes.data) ||
-      partnersRes.data.length === 0
+      partnersRes.error || !Array.isArray(partnersRes.data) || partnersRes.data.length === 0
         ? fallbackContent.partners
         : normalizePartners(partnersRes.data);
 
@@ -201,19 +159,11 @@ const departures =
         : normalizeBlogPosts(blogPostsRes.data);
 
     const faqs =
-      faqsRes.error ||
-      !Array.isArray(faqsRes.data) ||
-      faqsRes.data.length === 0
+      faqsRes.error || !Array.isArray(faqsRes.data) || faqsRes.data.length === 0
         ? fallbackContent.faqs
         : normalizeFAQs(faqsRes.data);
 
-    return {
-      routes,
-      departures,
-      partners,
-      blogPosts,
-      faqs,
-    };
+    return { routes, departures, partners, blogPosts, faqs };
   } catch (error) {
     console.error('Không thể tải dữ liệu Supabase:', error);
     return fallbackContent;
