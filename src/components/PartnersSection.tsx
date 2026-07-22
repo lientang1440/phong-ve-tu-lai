@@ -95,7 +95,7 @@ export default function PartnersSection({ partners }: PartnersSectionProps) {
                   </div>
                   <div className="flex items-center space-x-1">
                     <Heart className="w-4 h-4 text-brand-coral shrink-0" />
-                    <span>Đối tác uy tín hàng đầu</span>
+                    <span>Đối tác uy tín, tin cậy</span>
                   </div>
                 </div>
               </div>
