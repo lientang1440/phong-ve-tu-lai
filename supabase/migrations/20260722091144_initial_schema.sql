@@ -168,30 +168,309 @@ set
 -- =========================================================
 
 insert into public.departures (
-  id, route_from, route_to, ferry_operator, departure_time, price_label, is_active
+  route_from,
+  route_to,
+  ferry_operator,
+  departure_time,
+  price_label,
+  is_active
 )
 values
-  ('9d400f3d-f7a3-4f29-92d8-0d4c6dc6f4a6', 'Rạch Giá', 'Phú Quốc', 'Superdong', '07:20', 'Người lớn: 324.000 VND; NCT: 275.000 VND; Trẻ em: 236.000 VND', true),
-  ('ebade7c5-0a51-4836-90aa-6d1f446d8fa3', 'Rạch Giá', 'Phú Quốc', 'Superdong', '10:10', 'Người lớn: 324.000 VND; NCT: 275.000 VND; Trẻ em: 236.000 VND', true),
-  ('84f48d9a-2b4b-43c5-a5f3-e0f4d2414913', 'Rạch Giá', 'Phú Quốc', 'Superdong', '12:20', 'Người lớn: 324.000 VND; NCT: 275.000 VND; Trẻ em: 236.000 VND', true),
-  ('ba9ad02d-bdb2-4c3c-8935-6cc5b19198f8', 'Rạch Giá', 'Phú Quốc', 'Superdong', '13:30', 'Người lớn: 324.000 VND; NCT: 275.000 VND; Trẻ em: 236.000 VND', true),
-  ('f08fe4d8-c71d-4f37-b7ab-7e7486f3c68b', 'Rạch Giá', 'Phú Quốc', 'Phú Quốc Express', '07:10', 'VIP: 500.000 VND; Người lớn: 315.000 VND; NCT: 265.000 VND; Trẻ em: 225.000 VND', true),
-  ('866c22cb-9c47-48cd-9b41-1f672b4a96ac', 'Rạch Giá', 'Phú Quốc', 'Phú Quốc Express', '08:00', 'VIP: 500.000 VND; Người lớn: 315.000 VND; NCT: 265.000 VND; Trẻ em: 225.000 VND', true),
-  ('76f4c416-1db4-4a6d-8a5f-f3d8149d6d3c', 'Rạch Giá', 'Phú Quốc', 'Phú Quốc Express', '10:00', 'VIP: 500.000 VND; Người lớn: 315.000 VND; NCT: 265.000 VND; Trẻ em: 225.000 VND', true),
-  ('6d1b22d5-6cf4-4bf0-9d91-2d7a67d154f5', 'Rạch Giá', 'Phú Quốc', 'Phú Quốc Express', '13:20', 'VIP: 500.000 VND; Người lớn: 315.000 VND; NCT: 265.000 VND; Trẻ em: 225.000 VND', true),
-  ('a5c99740-fbb2-4864-b195-1f2c230b9530', 'Rạch Giá', 'Phú Quốc', 'Superdong', '07:10', 'Người lớn: 324.000 VND; NCT: 275.000 VND; Trẻ em: 236.000 VND', true),
-  ('d5146a7f-b2dd-46f2-ac91-93ef1d171eb0', 'Rạch Giá', 'Phú Quốc', 'Superdong', '07:55', 'Người lớn: 324.000 VND; NCT: 275.000 VND; Trẻ em: 236.000 VND', true),
-  ('e9bf6d03-5ef6-4cf1-8341-716d0d9654ee', 'Rạch Giá', 'Phú Quốc', 'Superdong', '10:30', 'Người lớn: 324.000 VND; NCT: 275.000 VND; Trẻ em: 236.000 VND', true),
-  ('46f474f8-f5d9-44b8-b1e7-62c817b6c9f5', 'Rạch Giá', 'Phú Quốc', 'Superdong', '13:10', 'Người lớn: 324.000 VND; NCT: 275.000 VND; Trẻ em: 236.000 VND', true)
-on conflict (id) do update
-set
-  route_from = excluded.route_from,
-  route_to = excluded.route_to,
-  ferry_operator = excluded.ferry_operator,
-  departure_time = excluded.departure_time,
-  price_label = excluded.price_label,
-  is_active = excluded.is_active,
-  updated_at = now();
+
+-- =====================================================
+-- 1. PHÚ QUỐC → RẠCH GIÁ
+-- =====================================================
+
+-- Superdong
+(
+  'Phú Quốc',
+  'Rạch Giá',
+  'Superdong',
+  '07:20',
+  'Người lớn: 324.000 VND; NCT: 275.000 VND; Trẻ em: 236.000 VND',
+  true
+),
+(
+  'Phú Quốc',
+  'Rạch Giá',
+  'Superdong',
+  '10:10',
+  'Người lớn: 324.000 VND; NCT: 275.000 VND; Trẻ em: 236.000 VND',
+  true
+),
+(
+  'Phú Quốc',
+  'Rạch Giá',
+  'Superdong',
+  '12:20',
+  'Người lớn: 324.000 VND; NCT: 275.000 VND; Trẻ em: 236.000 VND',
+  true
+),
+(
+  'Phú Quốc',
+  'Rạch Giá',
+  'Superdong',
+  '13:30',
+  'Người lớn: 324.000 VND; NCT: 275.000 VND; Trẻ em: 236.000 VND',
+  true
+),
+
+-- Phú Quốc Express
+(
+  'Phú Quốc',
+  'Rạch Giá',
+  'Phú Quốc Express',
+  '07:10',
+  'VIP: 500.000 VND; Người lớn: 315.000 VND; NCT: 265.000 VND; Trẻ em: 225.000 VND',
+  true
+),
+(
+  'Phú Quốc',
+  'Rạch Giá',
+  'Phú Quốc Express',
+  '08:00',
+  'VIP: 500.000 VND; Người lớn: 315.000 VND; NCT: 265.000 VND; Trẻ em: 225.000 VND',
+  true
+),
+(
+  'Phú Quốc',
+  'Rạch Giá',
+  'Phú Quốc Express',
+  '10:00',
+  'VIP: 500.000 VND; Người lớn: 315.000 VND; NCT: 265.000 VND; Trẻ em: 225.000 VND',
+  true
+),
+(
+  'Phú Quốc',
+  'Rạch Giá',
+  'Phú Quốc Express',
+  '13:20',
+  'VIP: 500.000 VND; Người lớn: 315.000 VND; NCT: 265.000 VND; Trẻ em: 225.000 VND',
+  true
+),
+
+-- =====================================================
+-- 2. RẠCH GIÁ → PHÚ QUỐC
+-- =====================================================
+
+-- Superdong
+(
+  'Rạch Giá',
+  'Phú Quốc',
+  'Superdong',
+  '07:10',
+  'Người lớn: 324.000 VND; NCT: 275.000 VND; Trẻ em: 236.000 VND',
+  true
+),
+(
+  'Rạch Giá',
+  'Phú Quốc',
+  'Superdong',
+  '07:55',
+  'Người lớn: 324.000 VND; NCT: 275.000 VND; Trẻ em: 236.000 VND',
+  true
+),
+(
+  'Rạch Giá',
+  'Phú Quốc',
+  'Superdong',
+  '10:30',
+  'Người lớn: 324.000 VND; NCT: 275.000 VND; Trẻ em: 236.000 VND',
+  true
+),
+(
+  'Rạch Giá',
+  'Phú Quốc',
+  'Superdong',
+  '13:10',
+  'Người lớn: 324.000 VND; NCT: 275.000 VND; Trẻ em: 236.000 VND',
+  true
+),
+
+-- Phú Quốc Express
+(
+  'Rạch Giá',
+  'Phú Quốc',
+  'Phú Quốc Express',
+  '07:00',
+  'VIP: 500.000 VND; Người lớn: 315.000 VND; NCT: 265.000 VND; Trẻ em: 225.000 VND',
+  true
+),
+(
+  'Rạch Giá',
+  'Phú Quốc',
+  'Phú Quốc Express',
+  '10:20',
+  'VIP: 500.000 VND; Người lớn: 315.000 VND; NCT: 265.000 VND; Trẻ em: 225.000 VND',
+  true
+),
+(
+  'Rạch Giá',
+  'Phú Quốc',
+  'Phú Quốc Express',
+  '12:10',
+  'VIP: 500.000 VND; Người lớn: 315.000 VND; NCT: 265.000 VND; Trẻ em: 225.000 VND',
+  true
+),
+(
+  'Rạch Giá',
+  'Phú Quốc',
+  'Phú Quốc Express',
+  '13:00',
+  'VIP: 500.000 VND; Người lớn: 315.000 VND; NCT: 265.000 VND; Trẻ em: 225.000 VND',
+  true
+),
+
+-- =====================================================
+-- 3. PHÚ QUỐC → HÀ TIÊN
+-- =====================================================
+
+-- Superdong
+(
+  'Phú Quốc',
+  'Hà Tiên',
+  'Superdong',
+  '06:30',
+  'Người lớn: 226.000 VND; NCT: 192.000 VND; Trẻ em: 157.000 VND',
+  true
+),
+(
+  'Phú Quốc',
+  'Hà Tiên',
+  'Superdong',
+  '08:10',
+  'Người lớn: 226.000 VND; NCT: 192.000 VND; Trẻ em: 157.000 VND',
+  true
+),
+(
+  'Phú Quốc',
+  'Hà Tiên',
+  'Superdong',
+  '10:20',
+  'Người lớn: 226.000 VND; NCT: 192.000 VND; Trẻ em: 157.000 VND',
+  true
+),
+(
+  'Phú Quốc',
+  'Hà Tiên',
+  'Superdong',
+  '13:30',
+  'Người lớn: 226.000 VND; NCT: 192.000 VND; Trẻ em: 157.000 VND',
+  true
+),
+(
+  'Phú Quốc',
+  'Hà Tiên',
+  'Superdong',
+  '14:30',
+  'Người lớn: 226.000 VND; NCT: 192.000 VND; Trẻ em: 157.000 VND',
+  true
+),
+
+-- Phú Quốc Express
+(
+  'Phú Quốc',
+  'Hà Tiên',
+  'Phú Quốc Express',
+  '07:00',
+  'VIP: 330.000 VND; Người lớn: 216.000 VND; NCT: 182.000 VND; Trẻ em: 148.000 VND',
+  true
+),
+(
+  'Phú Quốc',
+  'Hà Tiên',
+  'Phú Quốc Express',
+  '09:00',
+  'VIP: 330.000 VND; Người lớn: 216.000 VND; NCT: 182.000 VND; Trẻ em: 148.000 VND',
+  true
+),
+(
+  'Phú Quốc',
+  'Hà Tiên',
+  'Phú Quốc Express',
+  '11:45',
+  'VIP: 330.000 VND; Người lớn: 216.000 VND; NCT: 182.000 VND; Trẻ em: 148.000 VND',
+  true
+),
+(
+  'Phú Quốc',
+  'Hà Tiên',
+  'Phú Quốc Express',
+  '14:00',
+  'VIP: 330.000 VND; Người lớn: 216.000 VND; NCT: 182.000 VND; Trẻ em: 148.000 VND',
+  true
+),
+
+-- =====================================================
+-- 4. HÀ TIÊN → PHÚ QUỐC
+-- =====================================================
+
+-- Superdong
+(
+  'Hà Tiên',
+  'Phú Quốc',
+  'Superdong',
+  '06:10',
+  'Người lớn: 226.000 VND; NCT: 192.000 VND; Trẻ em: 157.000 VND',
+  true
+),
+(
+  'Hà Tiên',
+  'Phú Quốc',
+  'Superdong',
+  '08:20',
+  'Người lớn: 226.000 VND; NCT: 192.000 VND; Trẻ em: 157.000 VND',
+  true
+),
+(
+  'Hà Tiên',
+  'Phú Quốc',
+  'Superdong',
+  '10:00',
+  'Người lớn: 226.000 VND; NCT: 192.000 VND; Trẻ em: 157.000 VND',
+  true
+),
+(
+  'Hà Tiên',
+  'Phú Quốc',
+  'Superdong',
+  '12:15',
+  'Người lớn: 226.000 VND; NCT: 192.000 VND; Trẻ em: 157.000 VND',
+  true
+),
+
+-- Phú Quốc Express
+(
+  'Hà Tiên',
+  'Phú Quốc',
+  'Phú Quốc Express',
+  '07:00',
+  'VIP: 330.000 VND; Người lớn: 216.000 VND; NCT: 182.000 VND; Trẻ em: 148.000 VND',
+  true
+),
+(
+  'Hà Tiên',
+  'Phú Quốc',
+  'Phú Quốc Express',
+  '09:00',
+  'VIP: 330.000 VND; Người lớn: 216.000 VND; NCT: 182.000 VND; Trẻ em: 148.000 VND',
+  true
+),
+(
+  'Hà Tiên',
+  'Phú Quốc',
+  'Phú Quốc Express',
+  '11:45',
+  'VIP: 330.000 VND; Người lớn: 216.000 VND; NCT: 182.000 VND; Trẻ em: 148.000 VND',
+  true
+),
+(
+  'Hà Tiên',
+  'Phú Quốc',
+  'Phú Quốc Express',
+  '13:45',
+  'VIP: 330.000 VND; Người lớn: 216.000 VND; NCT: 182.000 VND; Trẻ em: 148.000 VND',
+  true);
 
 -- =========================================================
 -- 5. PARTNERS

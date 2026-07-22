@@ -132,7 +132,7 @@ export default function Footer() {
                   <a href="tel:0364674854" className="font-mono text-base font-bold text-white hover:text-brand-coral block">
                     0364 674 854
                   </a>
-                  <a href="tel:02670795274" className="font-mono text-sm font-semibold text-slate-300 hover:text-brand-coral block">
+                  <a href="tel:0944485510" className="font-mono text-base font-bold text-white hover:text-brand-coral block">
                     0944 485 510
                   </a>
                 </div>
