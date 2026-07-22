@@ -29,14 +29,17 @@ export default function Footer() {
           
           {/* Brand Info Grid block */}
           <div className="md:col-span-4 space-y-4">
-            <div className="flex items-center space-x-2.5">
-              <div className="p-2 bg-brand-coral rounded-xl text-white">
-                <Landmark className="w-5 h-5" />
-              </div>
-              <h3 className="font-heading font-black text-xl text-white tracking-tight">
-                Phòng Vé Tư Lai
-              </h3>
-            </div>
+          <div className="flex items-center space-x-3">
+  <img
+    src="/logo TL.png"
+    alt="Phòng Vé Tư Lai"
+    className="w-12 h-12 object-contain"
+  />
+
+  <h3 className="font-heading font-black text-xl text-white tracking-tight">
+    Phòng Vé Tư Lai
+  </h3>
+</div>
             
             <p className="font-sans text-xs sm:text-sm text-slate-400 leading-relaxed">
               Cung cấp dịch vụ vận tải hành khách tàu cao tốc đi Phú Quốc, Côn Đảo, Nam Du và các đảo ngọc tuyệt đẹp vùng biển Tây Nam Việt Nam. Cam kết giao vé nhanh, an tâm tuyệt đối.
@@ -168,17 +171,21 @@ export default function Footer() {
       <div className="bg-slate-950/40 border-t border-white/5 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 font-sans font-medium gap-3">
           <span>
-            © {currentYear} OceanLine & Phòng vé Tư Lai. Tất cả quyền được bảo lưu.
-          </span>
-          <div className="flex items-center space-x-1.5 text-slate-500">
-            <span>Thiết kế tối ưu hóa tốc độ cao</span>
-            <Heart className="w-3.5 h-3.5 text-brand-coral fill-brand-coral animate-ping-slow" />
-            <span>tại Việt Nam</span>
-          </div>
+  © {currentYear} Phòng Vé Tư Lai. Đại lý ủy quyền chính thức, đồng hành cùng mọi hành trình ra đảo.
+</span>
+
+<div className="flex items-center space-x-2 text-slate-400">
+  <span>Uy tín</span>
+  <span>•</span>
+  <span>Nhanh chóng</span>
+  <span>•</span>
+  <span>Tận tâm</span>
+  <Heart className="w-4 h-4 text-brand-coral fill-brand-coral animate-pulse ml-1" />
+</div>
         </div>
       </div>
-
     </footer>
   );
-}
+} 
+
 // Custom CSS animations configured in app
